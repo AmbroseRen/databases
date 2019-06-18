@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+	<!-- 调试配置，生成环境下debug为false，默认为false -->
+	<prop name="debug">true</prop>
+
+	<!-- tracelog：是否记录跟踪日志，默认为false，traceSqlLog：是否记录sql日志，默认为false-->
+	<prop name="traceLog">true</prop>
+	<prop name="traceSqlLog">true</prop>
+
+	<!-- 系统配置 -->
+	<prop name="base_package">com.aisino;demo</prop>	<!-- 扫描类路径，可以配置多个，以分号隔开，路径不要太浅，否则扫描类过多 -->
+	<prop name="first_page">/canvas/login</prop> <!-- 首页配置 -->
+	<prop name="home_page">/canvas/index2</prop> <!-- 主页配置 -->
+	
+	<!-- 配置单组织 -->
+	<prop name="single_orgn">false</prop> 
+	
+	<!-- 是否支持多数据中心 -->
+<!-- 	<prop name="supportDataCenter">true</prop> -->
+
+	<!-- 上传控制 -->
+	<prop name="upload_limit">20</prop> <!-- 最大上传大小，默认10m -->
+	<prop name="upload_path">www/upload/</prop> <!-- 上传文件路径 -->
+
+	<login>
+		<!-- header背景色 -->
+		<prop name="header.color">#e1e1e1</prop>
+		<!-- logo： 高度40px,最长不超过1024px-->
+		<prop name="header.img">www/res/mainui/image/login_logo_green_zh_CN.png</prop>
+		<!-- 中间部分背景色 -->
+		<prop name="content.color">#f1f8fd</prop>
+		<!-- 中间部分图片： 高度为350px，宽度为600px-->
+		<prop name="content.img">www/res/mainui/image/login_main_green_zh_CN.png</prop>
+		<!-- footer背景色 -->
+		<prop name="footer.color">#e1e1e1</prop>
+		<!-- footer文字 -->
+		<prop name="footer.text">天津航天信息股份有限公司</prop>
+		<!--控制登录界面的登录日期、验证码的显示，logindate显示日期，captcha显示验证码 ，注意用英文逗号分割-->
+<!-- 		<prop name="showoptions">captcha</prop> -->
+		<!-- 登录按钮颜色 -->
+		<prop name="button.color">#1ab394</prop>
+		<!-- 输入框的边框颜色 -->
+		<prop name="input.border.color">#1ab394</prop>
+		<!-- 下拉框右侧的图标：高度14px，宽度14px -->
+		<prop name="input.arrow.img">www/aos/mainui/image/arrow_green.png</prop>
+		<!-- 用户名左侧的图标：高度22px，宽度22px -->
+		<prop name="input.username.icon">www/res/mainui/image/yonghu_green.png</prop>
+    </login>
+	<!-- 多语言配置 -->
+	<!--
+	<prop name="multilanguage">false</prop>
+    <language default="zh_CN">
+        <prop name="zh_CN">简体中文</prop>
+        <prop name="en_US">English</prop>
+    </language>
+	-->
+	
+	<index>
+<!-- 	      <prop name="style">www/aos/mainui/customIndex.css</prop> -->
+<!-- 	      <prop name="LogoImage">www/res/mainui/image/1.png</prop> -->
+	      <prop name="LogoImageWidth">121</prop>
+	      <prop name="LogoText">待开发管理系统</prop>
+	</index>
+	
+	<!-- 数据源 -->
+	<!--
+		mysql
+			com.mysql.jdbc.Driver
+			jdbc:mysql://127.0.0.1:3306/myDB
+		sqlserver
+			com.microsoft.sqlserver.jdbc.SQLServerDriver
+			jdbc:sqlserver://localhost:1433;DatabaseName=myDB
+		oracle
+			oracle.jdbc.driver.OracleDriver
+			jdbc:oracle:thin:@localhost:1521:myDB
+		postgresql	【postgresql中字段名必须为小写】
+			org.postgresql.Driver
+			jdbc:postgresql://localhost/myDB
+		sqlite
+			org.sqlite.JDBC
+			jdbc:sqlite:myDB.db
+		dm
+			dm.jdbc.driver.DmDriver
+			jdbc:dm://ip:port/SYSDBA
+	-->
+	<database default="aos+">
+
+		<ds id="aos+" hidden="true">
+			<prop name="desc">AOS===</prop>
+			<prop name="type">mysql</prop>
+			<prop name="driver">com.mysql.jdbc.Driver</prop>
+			<prop name="url">jdbc:mysql://127.0.0.1:3306/aos</prop>
+			<prop name="username">root</prop>
+			<prop name="password">x5</prop>
+			<prop name="decrypt">false</prop>
+		</ds>
+		<!-- <ds id="sqlserver" hidden="true">
+			<prop name="desc">自来水系统</prop>
+			<prop name="type">sqlserver</prop>
+			<prop name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</prop>
+			<prop name="url">jdbc:sqlserver://192.168.0.79:1433;DatabaseName=VATInvoiceData</prop>
+			<prop name="username">sa</prop>
+			<prop name="password">wangjian_762161</prop>
+			<prop name="decrypt">false</prop>
+		</ds>
+		<ds id="oracle" hidden="true">
+			<prop name="desc">自来水系统</prop>
+			<prop name="type">oracle</prop>
+			<prop name="driver">oracle.jdbc.driver.OracleDriver</prop>
+			<prop name="url">jdbc:oracle:thin:@192.168.0.148:1521:CRM</prop>
+			<prop name="username">zlsxm</prop>
+			<prop name="password">zlsxm</prop>
+			<prop name="decrypt">false</prop>
+		</ds> -->
+		<!-- <ds id="aos+" hidden="true">
+			<prop name="desc">自来水系统</prop>
+			<prop name="type">oracle</prop>
+			<prop name="driver">oracle.jdbc.driver.OracleDriver</prop>
+			<prop name="url">jdbc:oracle:thin:@192.168.0.81:1521:orcl</prop>
+			<prop name="username">newaos</prop>
+			<prop name="password">aisino_tj</prop>
+			<prop name="decrypt">false</prop>
+		</ds>
+		<ds id="sqlserver" hidden="true">
+			<prop name="desc">自来水系统</prop>
+			<prop name="type">sqlserver</prop>
+			<prop name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</prop>
+			<prop name="url">jdbc:sqlserver://189.10.60.3\VAT;DatabaseName=VATInvoiceData</prop>
+			<prop name="username">sa</prop>
+			<prop name="password">asd123*</prop>
+			<prop name="decrypt">false</prop>
+		</ds>
+		<ds id="oracle" hidden="true">
+			<prop name="desc">自来水系统</prop>
+			<prop name="type">oracle</prop>
+			<prop name="driver">oracle.jdbc.driver.OracleDriver</prop>
+			<prop name="url">jdbc:oracle:thin:@192.168.0.81:1521:orcl</prop>
+			<prop name="username">aisinozls</prop>
+			<prop name="password">aisinozls</prop>
+			<prop name="decrypt">false</prop>
+		</ds> -->
+	</database>
+
+</root>

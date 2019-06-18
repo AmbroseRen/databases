@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="AmbroseRen.system.dao.SystemDao">
+	<select id="ListInfo" parameterType="java.lang.String" resultType="map">
+		select * from "AmbroseRen" t 
+		order by t.userid asc
+	</select>
+	
+	<update id="mod">
+		update "AmbroseRen"
+		<set>
+			username=#{username}
+		</set>
+		<where>
+			userid=#{userid}
+		</where>
+	</update>
+	
+	<delete id="del">
+		delete "AmbroseRen" 
+		<where>
+			<if test="usreid !=null and usrid !=''">
+				username like concat('%','#{username}','%')
+			</if>
+		</where>
+	</delete>
+	
+</mapper>

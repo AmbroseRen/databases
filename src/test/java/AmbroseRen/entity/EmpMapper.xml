@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ 
+ <mapper namespace="AmbroseRen.dao.EmployeeDAO">
+	<!-- 
+		id:每条sql语句都有唯一id（一条记录的id） 
+		parameterType:参数类型(若是类，则写全限定名)	
+	-->
+	<insert id="save" parameterType="AmbroseRen.entity.Employee">
+		insert into t_emp_amb values(t_emp_seq_amb.nextval,#{ename},#{salary},#{age})
+	</insert>
+	<!-- resultType:返回类型（如果是类，要写全限定名）， -->
+	<select id="findAll" resultType="AmbroseRen.entity.Employee">
+		SELECT * FROM t_emp_amb
+	</select>
+	
+	<select id="findById" parameterType="int" resultType="AmbroseRen.entity.Employee">
+		SELECT * FROM t_emp_amb WHERE id=#{id1}
+	</select>
+	<update id="update" parameterType="AmbroseRen.entity.Employee">
+		UPDATE t_emp_amb SET ename=#{ename},salary =#{salary},age=#{age} WHERE id=#{id}
+	</update>
+	<delete id="delete">
+		DELETE FROM　t_emp_Amb WHERE　id=#{id1}
+	</delete>
+	
+	<!-- 返回Map类型的结果:map是java.util.Map的缩写 -->
+	<select id="findById2" parameterType="int" resultType="map">
+		select * from t_emp_amb where id=#{id1}
+	</select>
+	<!-- 
+		设置字段名与实体类的属性名的对应关系。
+		  注：只需要将不一致的列出来
+	 -->
+	<resultMap type="AmbroseRen.entity.Emp2" id="empResultMap">
+		<result property="empNO" column="id"/>
+		<result property="name" column="ename"/>
+	</resultMap>
+	
+	<select id="findById3" parameterType="int" resultType="AmbroseRen.entity.Emp2">
+		select * from t_emp_amb where id=#{id1}
+	</select>
+</mapper>

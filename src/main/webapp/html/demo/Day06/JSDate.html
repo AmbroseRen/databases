@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>内置对象</title>
+	<script >
+		//5.Date 
+		//1)如何创建Date
+		var d1 =new Date();
+		var d2 =new Date("2017/09/01 09:09:09");
+		console.log(d1);
+		console.log(d2);
+		//转换为本地格式的字符串
+		console.log(d1.toLocaleDateString());
+		console.log(d1.toLocaleTimeString());
+		//3）读取时间分量
+		var y = d1.getFullYear();
+		var m = d1.getMonth()+1;//月份从0开始.....
+		var d =d1.getDate();
+		var today = y+"年"+m+"月"+d+"日";
+		console.log(today);
+		//6）RegExp
+		var str = "You can you up,no can no bb.";
+		//1)创建正则对象
+		var reg = /no/;
+		//2)test()检测字符串中是否包含与正则匹配的子串;
+		console.log(reg.test(str)+"reg");
+		//3)exec();
+		//普通模式：从字符串中检测出与正则匹配的第一个子串
+		console.log(reg.exec(str));
+		console.log(reg.exec(str));
+		console.log("---");
+		//全局模式：第一次调用，检测出匹配的第一个子串
+		//		第n次调用则返回匹配的第n个子串
+		reg = /no/g;
+		console.log(reg.exec(str));
+		console.log(reg.exec(str));
+		console.log(reg.exec(str));
+		console.log(reg.exec(str));
+		//7.Function
+		function sum(){
+			var s = 0;
+			if(arguments.length){
+				for(var i=0;i<arguments.length;i++){
+					s +=arguments[i];
+				}
+			}
+			return s;
+		}
+		//执行...sum()函数
+		console.log(sum(1,2));
+		console.log(sum(3,4,5,6));
+	</script>	
+</head>
+<body>
+	
+</body>
+</html>

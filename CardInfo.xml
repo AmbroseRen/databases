@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<string xmlns="http://tjwws.net/">
+	<WSRtn>
+		<RtnVal>
+			<RtnID>0</RtnID>
+			<RtnData>1</RtnData>
+		</RtnVal>
+		<RtnDt>
+			<RegId>0508001143</RegId>
+			<CardId>B0072037</CardId>
+			<UserName>张建海</UserName>
+			<Address>西青区泰华公寓1-4-501</Address>
+			<LocationOfMeter>楼道</LocationOfMeter>
+			<Price>阶梯</Price>
+			<MaximumVolumeOfTheWaterBeSold>180</MaximumVolumeOfTheWaterBeSold>
+			<MinimumVolumeOfTheWaterBeSold>1</MinimumVolumeOfTheWaterBeSold>
+			<StatusOfSellingBeAuthorized>0</StatusOfSellingBeAuthorized>
+			<CauseOfTheWaterCannotBeSold>无</CauseOfTheWaterCannotBeSold>
+			<FilialeId>0306</FilialeId>
+			<Filiale>西青营业分公司</Filiale>
+			<BusinessHall>西青分公司</BusinessHall>
+			<AddressOfBusinessHall>西青区西青道与青远路交口</AddressOfBusinessHall>
+			<TelephoneNumberOfBusinessHall>96655</TelephoneNumberOfBusinessHall>
+			<Remark>您201711至201810期间户总购507吨:一阶（小于180吨水价4.90元）已购180吨,二阶（181－240吨水价6.20元）已购60吨,三阶（大于240吨水价8.00元）已购267吨。
+			</Remark>
+		</RtnDt>
+	</WSRtn>
+</string>

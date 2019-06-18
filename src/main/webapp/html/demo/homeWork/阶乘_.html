@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>计算平方</title>
+	<script >
+		function cf(){
+		var n = document.getElementById("num").value;
+		console.log(typeof(n));
+		var s = document.getElementById("answer");
+			if(isNaN(n)){
+				s.innerHTML = "请输入数字！"
+			}else{
+				if(n<0){
+					s.innerHTML = "负数无阶乘！";
+				}else if(n==0){
+					s.innerHTML = 1;
+				}else{
+					var h=1;
+					for(var i=n;i;i--){
+						 h*=i;
+					}
+				s.innerHTML = h;
+				}
+			}			
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="num"/>
+	<input type="button" value="阶乘" onclick="cf()"/>=
+	<span id="answer"></span>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>阶乘</title>
+	<script >
+		function cal(){
+			var n = document.getElementById("num").value;
+			console.log(typeof(n));
+			var span = document.getElementById("answer");
+			if(isNaN(n)){
+				span.innerHTML = "请输入数字！"
+			}else{
+				if(n<0){
+					span.innerHTML = "负数没有阶乘！";
+				}else if(n==0){
+					span.innerHTML = 1;
+				}else{
+					var s =1;
+					for(var i=n;i;i--){
+						s*=i;
+					}
+				span.innerHTML = s; 
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="num"/>
+	<input type="button" value="阶乘" onclick="cal();"/>=
+	<span id="answer"></span>
+</body>
+</html>

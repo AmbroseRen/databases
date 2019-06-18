@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>模拟触发事件</title>
+<script src="../../../js/JQuery/jquery-1.11.1.js"></script>
+<style>
+	#te{
+		height:500px;
+		background-color:blue;
+	}
+	#te>input{
+/* 		width:200px; */
+/* 		height:200px; */
+		background-color:red;
+		float:right;
+	}
+</style>
+<script>
+	$(function(){		
+		$("#te>input").click(function(){
+			$("#te").slideUp(500);
+		});
+		setTimeout(function(){
+			$("#te>input").trigger("click");
+		},2000);
+	});
+</script>
+</head>
+<body>
+	<div id="te">
+		<input type="button" value="x"/>
+	</div>
+</body>
+</html>

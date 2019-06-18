@@ -1,0 +1,35 @@
+--| Iterator
+		--| Collection
+				--| Set	无序不重复
+						--| HashSet	线程不安全，存取速度快。底层是以哈希表实现的。
+						--| TreeSet	有序的存放，线程不安全，
+								通过compareTo或者compare方法来保证元素的唯一性，元素以二叉树的形式存放。
+						--| LinkedHashSet	采用LinkedHashMap实现；
+				--| SortedSet	可以对集合中的数据进行排序
+				--| List	有序可重复，有索引
+						--| ArrayList	线程不安全，查询速度快
+								其实就是数组，容量一大，频繁增删就是噩梦，适合随机查找；
+						--| LinkedList	链表结构，增删速度快
+						--| Vector	链表结果，增删速度快
+						--| Queue	队列接口
+		--| Map	键值对
+				--| HashMap	底层是哈希表数据结构，允许使用 null 值和 null 键，该集合是不同步的。将hashtable替代
+						散列表，和ArrayList一样采用数组实现，超过初始容量会对性能有损耗；
+						--| LinkedHashMap
+				--| HashTable
+						--| Properties		
+				--| SortedMap
+						--| TreeMap	底层是二叉树数据结构。线程不同步。可以用于给map集合中的键进行排序。
+				--| WeakHashMap
+		--| ListIterator
+
+集合输出：
+　　——4种常见的输出方式
+
+　　——Iterator： 迭代输出，使用最多的输出方式
+
+　　——ListIterator： Iterator的子接口，专门用于输出List中的内容
+
+　　——Enumeration
+
+　　——foreach		

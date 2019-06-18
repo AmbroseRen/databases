@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>合成事件</title>
+<script src="../../js/JQuery/jquery-1.11.1.js"></script>
+<style>
+	.big{
+		width:250px;
+		height:250px;
+	}
+</style>
+<script>
+	$(function(){
+		$("img").hover(
+			//图片绑定事件hover==mouseup +mousedown
+			function(){
+				//width(250)
+				//addClass("big")
+				//toggleClass("big")
+				//css("width","250px")
+				//attr("width","250px")
+				$(this).addClass("big");
+			},//悬停时调用
+			function(){
+				$(this).removeClass("big");
+			}//离开时调用
+		);
+		setInterval(function(){
+			//toggle()开关切换隐藏图片
+			$("img").toggle();
+		},500);
+	});
+</script>
+</head>
+<body>
+	<p>
+		<img src="../images/01.jpg"/>
+		<img src="../images/02.jpg"/>
+		<img src="../images/03.jpg"/>
+	</p>
+</body>
+</html>

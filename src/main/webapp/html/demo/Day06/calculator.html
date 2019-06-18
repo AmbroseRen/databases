@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>计算器</title>
+	<script>
+		function ccl(){
+			var input = document.getElementById("equation");//获取文本框
+			var eqt =input.value;//获取框内值
+			console.log(eqt);
+			document.getElementById("content").innerHTML=eqt;
+/* 			try{				
+				input.value =eval(eqt);
+			}catch(e){
+				input.value = "error"
+			} */
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="equation"/>
+	<input type="button" value="=" onclick="ccl()" id="ccl"/>
+	<input type="button" value="cls" onclick="cls" id="cls"/>
+	<!-- <input type="text" id="content" /> -->
+	<div id="content"></div>
+</body>
+</html>

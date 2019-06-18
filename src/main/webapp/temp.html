@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>模板页</title>
+<link href="css/temp.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+	
+</style>
+
+<script type="text/javascript" src="js/JQuery/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/plugins/ajax.js"></script>
+<script type="text/javascript">
+ window.onload = function(){
+ 	var fun = f1; 引用f1函数
+ 	fun(123);
+   };
+
+ function f1(){
+ 	var fun =f1;
+ 	//fun(222);
+ 	alert("测试");
+ 	
+ };
+ 
+ function js_method(){
+/* 	 NSURL *url = [NSURL URLWithString:_link];
+	 [_webView loadRequest:[NSURLRequest requestWithURL:url]];
+	 alert("aaa"); */
+	 
+	    var str = 'fsdfsd<a href="http://baidu.com">baidu</a>dasdas<a href="http://google.com"><img src="http://www.google.com.hk/intl/zh-CN/images/logo_cn.png" /></a>fsdfsd<a href="http://csdn.net">csdn</a>sdfsd';
+	    var arr = ['baidu','google']; //想保留的关键词
+	    var re = /<a.+?<\/a>/gi;
+	    document.write(str)  //替换之前的
+	    document.write('<br/><br/><br/><br/>')
+	    str = str.replace(re,function($){
+	        for(var i = 0, len = arr.length; i < len; i++){
+	            if($.match(arr[i])){
+	                return $;
+	            }else{
+	                if((i+1) != len){
+	                    continue;
+	                }else{
+	                    return '';
+	                }
+	            }
+	        }
+	    })
+	    document.write(str) //替换之后的
+ };
+ 
+ 
+</script>
+</head>
+<body>
+	<div>
+		<button onclick="f1();">测试</button>
+		<a href="https://project.igongdi.cn" onclick="js_method();">CCC</a>
+	</div>
+</body>
+</html>

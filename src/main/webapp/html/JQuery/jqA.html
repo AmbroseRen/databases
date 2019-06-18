@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>演示JQuery对象</title>
+<script src="../../js/JQuery/jquery-1.11.1.js"></script>
+<script>
+	function prt(){
+		var ps = $("p");
+		console.log(ps);
+		for(var i=0;i<ps.length;i++){
+			console.log(ps[i]);//输出节点
+			console.log(ps[i].innerHTML);//输出内容
+		}
+	}
+	function chg(img){
+		 var w = $(img).width();
+		 if(w==218){
+			 $(img).width(250).height(250);
+		 }else{
+			 $(img).width(218).height(218);
+		 }
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="打印" onclick="prt();"/>
+	<p>JQuery本质上是DOM数组</p>
+	<p>JQuery对象才能调用JQuery方法</p>
+	<p>DOM对象才能调用DOM的API</p>
+	<div>
+		<img src="../images/01.jpg" onclick="chg(this);"/>
+		<img src="../images/02.jpg" onclick="chg(this);"/>
+		<img src="../images/03.jpg" onclick="chg(this);"/>
+	</div>
+</body>
+</html>

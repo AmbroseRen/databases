@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery选择器</title>
+<script src="../../js/JQuery/jquery-1.11.1.js"></script>
+<script>
+	//和window.onload==function(){}等价，
+	//即在页面加载完成后，自动调用此匿名函数。
+	$(function(){
+		//1.基本选择器
+		//2.层次选择器
+		console.log($("#gz+"))
+		//3.过滤选择器:
+		//1)基本过滤选择器(*)
+		console.log($("li:first"));
+		console.log($("li:last"));
+		console.log($("li:odd"));//基数元素
+		console.log($("li:lt(2)"));//上元素
+		console.log($("li:gt(2)"));
+		console.log($("li:not(#gz)"));//除本身之外的元素
+		//2)内容过滤选择器
+		console.log($("li:contains('深')"));//查包含的元素个数
+		//3)可见性过滤选择器
+		console.log($("li:hidden"));
+		console.log($("li:visible"));
+		//4)属性过滤选择器
+		console.log($("li[style]"));
+		//5)状态过滤选择器
+		console.log($("input:disabled"));
+		console.log($("input:checked"));
+		//4.表达选择器
+		console.log($(":radio"));
+	});
+</script>
+</head>
+<body>
+	<ul>
+		<li>北京</li>
+		<li>上海</li>
+		<li id="gz">广州</li>
+		<li>深圳</li>
+		<li>湖深</li>
+		<li style="display:none;">东京</li>
+	</ul>
+	<!-- 
+		enabled：默认的值
+		readonly:只读，框内的值依然能提交给服务器，
+		disabled：禁用，框内的值不能提交给服务器。 
+	-->
+	<p>
+		账号：<input type="text" disabled/>
+	</p>
+	<p>
+		密码：<input type="password" />
+	</p>
+	<p>
+		性别：
+		<input type="radio" name="sex" checked/>男
+		<input type="radio" name="sex"/>女
+	</p>
+</body>
+</html>

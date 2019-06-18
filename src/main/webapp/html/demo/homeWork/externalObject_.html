@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>外部对象</title>
+<script>
+	function f1(){//确认跳转啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+		var b =confirm("请确认！")
+		if(b){
+			location.href = "http://www.tmooc.cn";
+		}
+	}
+	function f2(){
+		location.reload();
+	}
+	function f3(){
+		history.forward();
+	}
+	function f4(){
+		console.log(screen.width);
+		console.log(screen.height);
+	}
+	function f5(){
+		
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="确认链接 " onclick="f1()"/>
+	<input type="button" value="重载" onclick="f2()"/>
+	<input type="button" value="前进" onclick="f3()"/>
+	<input type="button" value="Screen" onclick="f4()"/>
+	<input type="button" value="GO" onclick="f5()"/>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>查询节点</title>
+<script>
+	window.onload = function(){
+		var  hb = document.getElementById("hb");
+		console.log(hb);
+ 		var father = hb.parentNode;
+ 		console.log(father);
+ 		var brothers =hb.parentNode.getElementsByTagName("li");
+ 		console.log(brothers);
+ 		var brother =hb.parentNode.getElementsByTagName("li")[4];
+ 		console.log(brother);
+	}
+</script>
+</head>
+<body>
+	<ul>
+		<li>北京</li>
+		<li>上海</li>
+		<li>广州</li>
+		<li>深圳</li>
+		<li id="hb">湖北</li>
+	</ul>
+</body>
+</html>

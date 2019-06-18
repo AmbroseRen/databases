@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>文字放大</title>
+<script src="../../js/JQuery/jquery-1.11.1.js"></script>
+<script>
+	function crease(){
+		//获取段落原来的字号（16px）
+		var size = $("p").css("font-size");
+		//抹掉单位px，便于计算
+		size = size.replace("px","");
+		//加1后设置所有段落
+		$("p").css("font-size",++size+"px");
+	}
+	function decrease(){
+		//获取段落原来的字号（16px）
+		var size = $("p").css("font-size");
+		//抹掉单位px，便于计算
+		size = size.replace("px","");
+		//加1后设置所有段落
+		$("p").css("font-size",--size+"px");
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="+" onclick="crease();"/>
+	<input type="button" value="-" onclick="decrease();"/>
+	<p>JQuery是一个轻量级框架，</p>
+	<p style="font-size:80px;">它为我们提供了简洁而一致的API，</p>
+	<p>使用它可以极大程度的简化js编程。</p>
+</body>
+</html>

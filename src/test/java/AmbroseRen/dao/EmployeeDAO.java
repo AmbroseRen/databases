@@ -1,0 +1,25 @@
+package AmbroseRen.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+
+import AmbroseRen.annotations.MyBatisRepository;
+import AmbroseRen.entity.Emp2;
+import AmbroseRen.entity.Employee;
+
+/**
+ * Mapper映射器
+ */
+@Repository("empDAO")
+@MyBatisRepository
+public interface EmployeeDAO {
+	public void save(Employee emp);
+	public List<Employee> findAll();
+	public Employee findById(int id);
+	public void update(Employee e);
+	public void delete(int id);
+	public Map findById2(int id);
+	public Emp2 findById3(int id);
+}

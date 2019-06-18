@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>photoWall</title>
+	<style type="text/css">
+		ul{
+			/* border:1px solid red; */
+			width:780px;
+			margin:10px auto;
+			/* 去掉列表左侧符号 */		
+			list-style-type:none;
+			padding:0;
+		}
+		body{
+			background-color:#066;
+		}
+		li{
+			border:1px solid red;
+			width:218px;
+			padding:10px;
+			margin:10px;
+			float:left;
+			background-color:#FFF;
+			
+		}
+		p{
+			text-align:center;
+		}
+		/* 采用相对定位实现元素的抖动效果 */
+		li:hover{
+			position:relative;
+			left:2px;
+			top:-2px;
+		}
+	</style>
+	<link rel="stylesheet" href=""/>
+</head> 
+<body>
+	<ul>
+		<li>
+			<img alt="" src="../images/01.jpg">
+			<p>又到了秋风萧瑟的时节</p>
+		</li>
+		<li>
+			<img alt="" src="../images/02.jpg">
+			<p>黄叶依旧，你在何方？</p>
+		</li>
+		<li>
+			<img alt="" src="../images/03.jpg">
+			<p>有你的时光真好!</p>
+		</li>
+		<li>
+			<img alt="" src="../images/04.jpg">
+			<p>无论是驾车...</p>
+		</li>
+		<li>
+			<img alt="" src="../images/05.jpg">
+			<p>或是泛舟...</p>
+		</li>
+		<li>
+			<img alt="" src="../images/06.jpg">
+			<p>定要把你找回！</p>
+		</li>
+		
+	</ul>
+</body>
+</html>

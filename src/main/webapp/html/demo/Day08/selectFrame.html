@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>拉选框</title>
+<script>
+	var cities;
+	window.onload = function(){
+		var pro =document.getElementById("city");
+		cities =[
+		    ["石家庄","保定","廊坊"],
+			["济南","青岛","烟台"],
+			["南京","无锡","苏州"]
+		];
+		
+	}
+	function chg(){
+		//console.log(1);
+		var s1 =document.getElementById("province");//获取省
+		var index =s1.value;//-1,0,1,2
+		console.log(index);
+		//获取省内城市
+		var pcities =cities[index];
+		console.log(pcities);
+		
+		//整体循环追加city元素
+ 		var s2 =document.getElementById("city");//获取元素
+// 		s2.innerHTML ="";
+ 		//console.log(s2);
+		
+// 		var ct =s2.getElementByTagName("op");
+// 		for(var i=pro.length;i>0;i--){
+// 			s2.removeChild();
+// 		}
+		s2.innerHTML = "<option>请选择</option>";//显示元素
+		//追加元素
+		if(pcities){
+			for(var i=0;i<pcities.length;i++){
+				var op =document.createElement("option");//创建节点
+				//var nn =document.createElement("option");
+				op.innerHTML = pcities[i];//显示元素
+				s2.appendChild(op);
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<form action="">	
+		省:
+		<select id="province" onchange="chg();">
+			<option value="-1" selected>请选择</option>
+			<option value="0">河北省</option>
+			<option value="1">山东省</option>
+			<option value="2">江苏省</option>
+		</select>
+		市:
+		<select id="city">
+			<option  >请选择</option>
+			
+		</select><br/>
+		<p>
+			
+			<input type="button" value="提交" onclick="chg()"/>	
+		</p>
+	</form>
+</body>
+</html>

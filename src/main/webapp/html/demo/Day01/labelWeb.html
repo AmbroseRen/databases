@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>演示网页内容的标签</title>
+</head>
+<body>
+	<!-- 1.标题  -->
+	<h1>促销信息</h1><br>
+	<h2>水果</h2>
+	<h3>香蕉</h3>
+	<p>八荣八耻</p>
+	<p>散打</p>
+	<!-- 2.有序列表 -->
+	<ol>
+		<li>省1</li>
+		<li>省2</li>
+		<li>省3</li>	
+	</ol>
+	<ul>
+		<li>市1</li>
+		<li>市2</li>
+		<li>市3</li>
+	</ul>
+	<hr> 
+	<!-- 3.嵌套列表  -->
+	<ol>
+		<li>省1
+			<ul>
+				<li>市1</li>
+				<li>市2</li>
+				<li>市3</li>
+			</ul>
+		</li>
+		<li>省2
+			<ul>
+				<li>县1</li>
+				<li>县2</li>
+				<li>县3</li>
+			</ul>
+		</li>
+		<li>省3</li>
+	</ol>
+	<!-- 4.行内元素 -->
+	<p>
+		<a href="#bei">北京市</a>海淀区北三环甲西路18号<font size="7" color="red"><b>中鼎大厦</b></font>B座7层<br>
+		北京市海淀区北三环甲西路18号<span style="color:red">中鼎大厦</span>B座7层
+	</p>
+	<!-- 5.空格折叠 -->
+	<p>空格1&nbsp; 空格2&nbsp;&nbsp;    			空格n&nbsp;&nbsp;&nbsp;&nbsp;0</p>
+	<!-- 6.图片：
+	1)绝对路径：从盘符出发的路径为绝对路径   
+	如： D:/workspace/day01/1.png
+	不利于系统间切换操作
+	2）相对路径：
+	写出图片和网页的相对位置----其链接地址不变 -->
+	<p>
+		<!-- 图片和网页平级 -->
+		<img src="d1.jpg"/>
+		<!-- 图片在网页下级 -->
+		<img src="H/d2.jpg"/>
+		<!-- 图片在网页上级 -->
+		<img alt="" src="../d0.jpg">
+		<!-- 通常用法 -->
+		<img alt="" src="../images/04.jpg">
+	</p>
+	<p>
+		<!-- 7.超链接 -->
+		<a href="http://www.tmooc.cn">TMOOC</a>
+		<a href="http://doc.tedu.cn" target="_blank">文档</a>
+	</p>
+	<p>
+		<!-- 2）锚点 -->			
+		<a name="bei">北京市</a>:一条大河波浪宽，风吹稻花香两岸。
+	</p>
+	<p>
+		<!-- 8.表格
+			1）基本用法
+			2）跨行跨列
+			3）行分组 -->
+		<table border="1" cellspacing="0" width="200px" height="50px">
+			<tr>
+				<td rowspan="2">小桂子</td>
+				<td>七阿哥</td>
+			</tr>
+			<tr>
+				<!-- <td >小三子</td> -->
+				<td>八福晋</td>
+			</tr>
+		</table>
+		
+		<table border="1" cellspacing="0" width="200px" height="50px">
+			<tr>
+				<td colspan="2">小六子</td>
+				<!-- <td>七阿哥</td> -->
+			</tr>
+			<tr>
+				<td>小三子</td>
+				<td >八福晋</td>
+			</tr>
+		</table>
+		<!-- 行分组 -->
+		<table border="1" cellspacing="0" width="300px">
+			<thead>
+				<tr>
+					<td>编号</td>
+					<td>名称</td>
+					<td>金额</td>
+				</tr>
+			</thead>
+			<tbody style="color:red">
+				<tr>
+					<td>1</td>
+					<td>鼠标</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>键盘</td>
+					<td>100</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2">合计</td>
+					<!-- <td></td> -->
+					<td>150</td>
+				</tr>
+			</tfoot>
+		</table>
+	</p>
+	<a href="#">顶部</a>
+</body>
+</html>

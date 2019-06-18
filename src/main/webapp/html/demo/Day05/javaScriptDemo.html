@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>js演示</title>
+	<!-- 2.嵌入式：在script标签里书写js。
+		该标签可以写在head里，也可以写在body中任意位置。 -->
+	<script type="text/javascript">
+	  //1)js函数公有，
+	  //2)js函数有返回值，但不用声明类型。
+		function f2(){
+		  //js单双引号没区别
+			alert("How are you?");
+		}
+	  	function f4(){
+	  		
+	  	}
+	</script>
+	<!-- 3.文件调用方式：在独立的js内书写js. -->
+	<script src="my.js"></script>
+</head>
+<body>
+	<!-- 事件：即用户的操作/动作，就是js被调用的时机。
+		例：单击/双击鼠标事件 -->
+	<!-- 1.事件定义式：在元素上定义事件时直接书写js -->
+	<input type="button" value="按钮1"
+		onclick="alert('Hello,World');"/>
+	<input type="button" value="按钮2" onclick="f2();"/>
+	<input type="button" value="按钮3" onclick="f3();"/>
+	<input type="button" value="按钮4" onclick="f4();"/>
+	<input type="button" value="悬停" onmousedown=""/>
+	<p onmousedown="alert(event.clientX);">text</p>
+	<div onclick="alert(event.clientX+':'+event.clientY)">div text</div>
+</body>
+</html>

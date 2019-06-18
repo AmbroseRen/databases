@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQ对象</title>
+<script src="../../../js/JQuery/jquery-1.11.1.js"></script>
+<script>
+	function node(){
+		var ps =$("p");
+		console.log(ps);
+		console.log(ps[0].innerHTML);
+		for(var i=0;i<ps.length;i++){
+			console.log(ps[i].innerHTML);
+		}
+	}
+	function chg(img){
+		var w =$(img).width();
+		if(w==218){
+			$(img).width(250).height(250);
+		}else{
+			$(img).width(218).height(218);
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="节点" onclick="node()"/>
+	<p>第一段</p>
+	<p>第二段</p>
+	<p>第三段</p>
+	<div>
+		<img src="../images/01.jpg" onclick="chg(this);"/>
+		<img src="../images/02.jpg" onclick="chg(this);"/>
+		<img src="../images/03.jpg" onclick="chg(this);"/>
+	</div>
+</body>
+</html>

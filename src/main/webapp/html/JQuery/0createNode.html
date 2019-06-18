@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQ增删节点</title>
+<script src="../../js/JQuery/jquery-1.11.1.js"></script>
+<script>
+	//$(function f1(){});
+	function f1(){
+		//jq创建节点li
+		var li =$("<li>天津</li>")
+		console.log(li);
+		//追加li
+		$("ul").prepend(li);
+	}
+	function f2(){
+		var li =$("<li>杭州</li>");
+		//插入li
+		$("#gz").after(li);//之后插入
+		//$("#gz").before(li);//之前插入
+	}
+	function f3(){
+		//$("#gz").remove();//移除节点
+		//$("#gz").empty();//清空节点内容
+		$("#gz").html("");//清空节点内容
+	}
+	//默认加载项
+	$(function(){
+		console.log($("#gz").parent());
+		console.log($("#gz").prev());//哥哥
+		console.log($("#gz").siblings());//兄弟节点
+		console.log($("ul").find("li[id]"));//找下级节点
+	});
+</script>
+</head>
+<body>
+	<p>
+		<input type="button" value="追加" onclick="f1()"/>
+		<input type="button" value="插入" onclick="f2()"/>
+		<input type="button" value="删除" onclick="f3()"/>
+	</p>
+	<ul>
+		<li>北京</li>
+		<li>上海</li>
+		<li id="gz">广州</li>
+		<li>深圳</li>
+		<li>湖北</li>
+	</ul>
+</body>
+</html>

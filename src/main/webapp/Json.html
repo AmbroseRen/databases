@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function f1(){
+		var s = {"code":"60086","name":"中国嘉陵","price":8};
+		alert(s.name)
+	}
+	function f2(){
+		var obj ={"name":"达内",
+				"address":{
+					"city":"北京",
+					"street":"北三环西路18号",
+					"root":708
+				}
+		};
+		alert(obj.address.street);
+	}
+	//使用由json语法表示由对象组成的数组
+	function f3(){
+		var arr =[{"name":"三藏","salary":1000},{"name":"悟空","salary":8000}];
+		alert(arr[1].salary)
+	}
+	//将json字符串转换为js对象
+	function f4(){
+		var str ='{"name":"三藏","salary":100}';
+		//直接使用json的内置对象方法parse
+		var obj =JSON.parse(str);
+		alert(obj.name);
+	}
+	function f5(){
+		var str ='[{"name":"悟空","salary":5000},{"name":"三藏","salary":3000}]';
+		var arr =JSON.parse(str);
+		alert(arr[1].name);
+	}
+</script>
+</head>
+<body style="font-size:30px;">
+	<a href="javascript:f1()">Click1</a>
+	<a href="javascript:f2()">Click2</a>
+	<a href="javascript:f3()">Click3</a>
+	<a href="javascript:f4()">Click4</a>
+	<a href="javascript:f5()">Click5</a>
+</body>
+</html>

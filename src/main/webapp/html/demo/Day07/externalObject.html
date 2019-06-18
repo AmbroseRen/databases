@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>外部对象</title>
+	<script>
+		function f1(){
+			var b =confirm ( "请确认离开！");
+			if(b){				
+				location.href = "http://www.tmooc.cn";
+			}
+		}
+		function f2(){
+			location.reload();		
+		}
+		function f3(){
+			history.forward();
+		}
+		function f4(){
+			console.log(screen.width);
+			console.log(screen.pixelDepth);
+			
+			console.log(navigator.userAgent);
+		}
+		function f5(){
+			
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="小猫猫" onclick="f1()"/>
+	<input type="button" value="喵喵喵..." onclick="f2()"/>
+	<input type="button" value="前进" onclick="f3()"/>
+	<input type="button" value="screen" onclick="f4()"/>
+	<input type="button" value="按钮" onclick="f5()"/>
+</body>
+</html>

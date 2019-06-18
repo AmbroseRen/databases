@@ -1,0 +1,35 @@
+1.配置Web下org.springframework.web.servlet.DispatcherServlet默认读取xml文件
+	<servlet>
+		<servlet-name>dispatcherServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-*.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcherServlet</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+2.配置bean扫描mapper文件包下的xml
+	spring-mybatis.xml
+	mybatis-config.xml	输出console日志
+	
+3.	配置Spring-MVC扫描解析xml
+	spring-mvc.xml
+	
+4.	配置log日志xml
+	log4j.xml	输出文件日志
+	
+5.配置连接池
+	spring-pool.xml
+	jdbc.properties		连接池参数
+	
+6.配置项目参数
+	config.properties	
+	
+7.配置"业务"SQL
+		
+		

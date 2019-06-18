@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>查询节点</title>
+<script>
+	window.onload = function(){
+		//1.根据id查询节点；
+		//2.根据标签名查询节点；
+		//3.根据name查询节点；
+		var name =document.getElementsByName("sex");
+		console.log(name);
+		//4.根据层次查询节点:即查询某节点的亲戚...
+		var hb =document.getElementById("hb");
+		console.log(hb.innerHTML);
+		//1）父亲
+		var ul =hb.parentNode;
+		console.log("ul:"+ul);
+		//3）孩子
+		console.log(ul.childNodes);//带了回车、空格，用的少
+		var lis = ul.getElementsByTagName("li");//只要元素，常用
+		console.log("lis:"+lis);
+		//2）兄弟：
+		//节点.父亲.孩子们[i]
+		
+		var sh = hb.parentNode.getElementsByTagName("li")[0];
+		console.log("sh:"+sh);
+		
+	}
+</script>
+</head>
+<body>
+	<p>
+		性别：
+		<input type="radio" name="sex"/>男
+		<input type="radio" name="sex"/>女
+	</p>
+	<ul>
+		<li>北京</li>
+		<li>上海</li>
+		<li>广州</li>
+		<li>深圳</li>
+		<li id="hb">湖北</li>
+	</ul>
+</body>
+</html>

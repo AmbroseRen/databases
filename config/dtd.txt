@@ -1,0 +1,8 @@
+dtd约束添加
+Window-->Preference-->xml-->XML catalog-->Add
+Location:D:\MAVEN\mybatis-3-config.dtd
+Key type:public ID
+Key:-//Mybatis/Mybatis Configuration DTD//EN
+
+同文件夹直接引用
+<!DOCTYPE Forms SYSTEM "form_definition.dtd">

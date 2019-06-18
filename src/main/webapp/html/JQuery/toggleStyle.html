@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>样式操作</title>
+<style>
+	.big{
+		font-size:30px;
+	}
+	.important{
+		color:red;
+	}
+</style>
+<script src="../../js/JQuery/jquery-1.11.1.js"></script>
+<script>
+	$(function(){
+		$("p").addClass("big").addClass("important");
+		//$("p").removeClass("big").removeClass("important");
+		console.log($("p").hasClass("big"));
+		
+		setInterval(function(){
+			$("p").toggleClass("big").toggleClass("important");
+		},200);
+	});
+</script>
+</head>
+<body>
+	<p style="">JQuery对样式提供了丰富的支持</p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>absolutePosition</title>
+	<style type="text/css">
+		div{
+			border:1px solid red;
+			width:318px;	
+			height:318px;
+			/* 此处加position完全是为了方便子元素做绝对定位，当前元素无需离队，所以设置了relative，
+			又应为当前元素无需改变位置，所以不必设置偏移量。 */
+			position:relative;		
+		}
+		p{
+			position:absolute;
+			bottom:40px;
+			width:318px;dd
+			/* right:10px; */
+			height:2em;
+			text-align:center; 
+			line-height:2em;
+			background-color:#FFF;
+			
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img alt="" src="../images/3.jpg">
+		<p>心向光明</p>
+	</div>
+</body>
+</html>

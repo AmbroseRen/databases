@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>猜数字</title>
+	<script>
+		//加载页面时生成随机数
+		var result =parseInt(Math.random()*100);
+		function guess(){
+			var n = document.getElementById("num").value;
+			//从元素内获取的所有数据都是字符串类型
+			console.log(typeof(n));
+			var span = document.getElementById("answer");
+			//判断是否为数字？
+			if(isNaN(n)){
+				span.innerHTML = "请输入数字！";
+			}else{
+				if(n<result){
+					span.innerHTML = "小了";
+				}else if(n>result){
+					span.innerHTML = "大了";
+				}else {
+					span.innerHTML ="对了";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="num"/>
+	<input type="button" value="猜" onclick="guess();"/>
+	<span id="answer"></span>
+</body>
+</html>

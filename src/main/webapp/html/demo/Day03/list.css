@@ -1,0 +1,267 @@
+/*0.对网页进行统一的设置*/
+/*星是通用选择器，能选择一切元素*/
+*{
+	padding:0px;
+	margin:0px;
+}
+
+/*1.给网页布局，设置每个区域的尺寸和位置*/
+div{
+	border:1px solid red;
+	margin:0px auto;
+}
+
+.logo{
+	width:960px;
+	height:61px;
+	background-image:url(../img/top_bg.png);
+}
+
+.menu{
+	height:91px;
+	background-color:#0488bb;
+}
+
+/* 渐变线 */
+.core{
+	background:url(../img/content_bg.png) repeat-x top;
+}
+.core{
+	height:410px;
+	/* 加边距目的：预留渐变线空间 */
+	padding-top:10px;
+}
+
+.copy{
+	width:960px;
+	height:50px;
+}
+
+.content{
+	width:950px;
+	height:390px;
+	border:5px solid #8ac1db; 
+}
+
+/* 元素选择器：1量级
+	.class	：10量级
+	#id	：100量级 */
+.content>div{
+	width:910px;
+	height:40px;
+}
+
+/* 20量级 */
+.content>.data{
+	width:px;
+	height:310px;
+}
+
+/*2.给网页上色*/
+body{
+	background-color:#0ea8d8;
+}
+
+.content{
+	background-color:#e8f3f8;
+}
+
+/*3.设置文本样式*/
+body{
+	font-fimily:"微软雅黑","文泉驿正黑","黑体";
+	font-size:14px;
+}
+
+.logo {
+	text-align:right;
+	/* 居中 */
+	line-height:61px;
+}
+
+.logo>a{
+	margin-right:40px;
+	color:#FFF;
+	text-decoration:none;
+}
+
+.logo>a:hover{
+	font-weight:bold;
+}
+
+.copy>p{
+	text-align:center;
+	color:#FFF;
+	height:25px;
+	line-height:25px;
+}
+
+/*4.设置表格样式*/
+.data>table{
+	border:1px solid #CCC;
+	/*边框合并必须卸载table上*/
+	border-collapse:collapse;
+	width:100%;
+	height:px;
+}
+
+.data td{
+	border:1px solid #ccc;
+	text-align:center;
+}
+
+.data thead tr{
+	height:40px;
+	background-color:#fafdaa;
+	font-weight:bold;
+}
+
+.data tbody tr{
+	height:32px;
+	background-color:#FFF;
+}
+.data tbody tr:hover{
+	background-color:#f7f9fd;
+}
+.update{
+	padding-left:15px;
+	background:url(../img/modification.png) no-repeat left;
+	border:0;
+	/*设置鼠标形状*/
+	cursor:pointer;
+}
+.update:hover{
+	color:red;
+}
+
+.delete{
+	padding-left:15px;
+	background:url(../img/delete.png) no-repeat left;
+	border:0;
+	cursor:pointer;
+}
+.delete:active{
+	color:red;
+}
+
+.btn{
+	text-align:right;
+	line-height:20px;
+	
+}
+
+/* 5.解决logo图片和消息提示框 */
+.logo>img{
+	float:left;
+}
+
+.content{
+	position:relative;
+}
+.content>.msg{
+	width:500px;
+	height:80px;
+	position:absolute;
+	left:250px;
+	top:150px;
+}
+.msg>img{
+	margin:5px;
+	float:right;
+	corsor:pointer;
+}
+.msg>p{
+	margin-left:38px;
+	height:80px;
+	line-height:80px;
+}
+.msg{
+	background:#fdeced url(../img/ok.png) no-repeat 10px 30.5px;
+}
+
+/* 6.设置菜单区的图标样式 */
+.menu>ul{
+	border:1px solid red;
+	width:960px;
+	height:91px;
+	margin:0 auto;
+	list-style-type:none;
+}
+.menu li {
+	border:1px solid yellow;
+	width:68px;
+	height:77px;
+	float:left;
+	margin:7px 14px;
+	cursor:pointer;
+}
+#index{
+	background-image:
+	url(../img/index_out.png);
+}
+#index:hover {
+	background-image:
+	url(../img/index_on.png);
+}
+#role{
+	background-image:
+	url(../img/role_out.png);
+}
+#role:hover {
+	background-image:
+	url(../img/role_on.png);
+}
+#admin{
+	background-image:url(../img/admin_out.png);
+}
+#admin:hover {
+	background-image:url(../img/admin_on.png);
+}
+#fee{
+	background-image:url(../img/fee_out.png);
+}
+#fee:hover {
+	background-image:url(../img/fee_on.png);
+}
+#account{
+	background-image:url(../img/account_out.png);
+}
+#account:hover {
+	background-image:url(../img/account_on.png);
+}
+#service{
+	background-image:url(../img/service_out.png);
+}
+#service:hover {
+	background-image:url(../img/service_on.png);
+}
+#bill{
+	background-image:url(../img/bill_out.png);
+}
+#bill:hover {
+	background-image:url(../img/bill_on.png);
+}
+#report{
+	background-image:url(../img/report_out.png);
+}
+#report:hover {
+	background-image:url(../img/report_on.png);
+}
+
+#information{
+	background-image:url(../img/information_out.png);
+}
+#information:hover {
+	background-image:url(../img/information_on.png);
+}
+
+#password{
+	background-image:url(../img/password_out.png);
+}
+#password:hover {
+	background-image:url(../img/password_on.png);
+}
+/* 收尾：删除开发过程中用于调试的边框 */
+div,.menu>ul,.menu li {
+	border:0;
+}
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>堆叠顺序</title>
+	<style type="text/css">
+		div{
+			width:700px;
+			height:500px;
+			background-color:#066;
+			margin:30px auto;
+			position:relative;
+		}
+		img{
+			position:absolute;
+		}
+		#i1{
+			bottom:30px;
+			left:220px;
+		}
+		#i2{			
+			top:30px;
+			right:90px;		
+		}
+		#i3{
+			top:50px;
+			left:100px;
+		}
+		img:hover{
+			z-index:99;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img alt="" src="../images/1.jpg" id="i1"/>
+		<img alt="" src="../images/2.jpg" id="i2"/>
+		<img alt="" src="../images/3.jpg" id="i3"/>
+	</div>
+</body>
+</html>

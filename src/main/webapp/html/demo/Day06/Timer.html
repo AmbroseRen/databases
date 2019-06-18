@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>计时</title>
+	<script>
+		var id;
+		function start(){
+			var sp =document.getElementById("sp");
+			id = setInterval(function(){
+				var t =new Date();
+				var s =t.toLocaleTimeString();
+				sp.value = s;//时间显示
+			},1000);
+		}
+		function stop(){
+			clearInterval(id);
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="开始" onclick="start()"/>
+	<input type="button" value="停止" onclick="stop()"/>
+	<input type="text" id="sp"/>
+</body>
+</html>

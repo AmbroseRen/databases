@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>循环图片</title>
+<style>
+	div{
+		border:1px solid red;
+		width:218px;
+		height:218px;
+		
+	}
+	.hidden{
+		display:none;
+	}
+</style>
+
+<script>
+	var id;
+	var n=0;
+	window.onload =function(){
+		start();
+	}	
+	function start(){
+		id =setInterval(function(){
+			n++;
+			var imgs =document.getElementsByTagName("img");
+			for (var i = 0; i < imgs.length; i++) {
+				imgs[i].className ="hidden";
+			}	
+			var v =n%imgs.length;
+			imgs[v].className="";
+		}, 1000);
+		
+	}
+	function stop(){
+		clearInterval(id);
+	}
+</script>
+</head>
+<body>
+	<div onmouseover="stop();" onmouseout="start();">
+		<img src="../images/01.jpg" />
+		<img src="../images/02.jpg" class="hidden"/>
+		<img src="../images/03.jpg" class="hidden"/>
+		<img src="../images/04.jpg" class="hidden"/>
+		<img src="../images/05.jpg" class="hidden"/>
+		
+	</div>
+</body>
+</html>

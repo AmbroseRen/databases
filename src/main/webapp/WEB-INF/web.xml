@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
+  <display-name>AmbroseRen</display-name>
+   
+  <!-- 缺省默认路径 -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+	<error-page>    
+		<error-code>404</error-code>    
+		<location>/error.jsp</location>    
+	</error-page>
+	
+	 <!-- 配置全局的初始化参数 -->
+	 <context-param>
+	   	<param-name>company</param-name>
+	   	<param-value>任思</param-value>
+	 </context-param>  	 
+	
+	<!-- Servlet.Cookie缓存 -->
+  <servlet>
+    <description></description>
+    <display-name>addCookieServlet</display-name>
+    <servlet-name>addCookieServlet</servlet-name>
+    <servlet-class>AmbroseRen.web.addCookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addCookieServlet</servlet-name>
+    <url-pattern>/addCookie</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>FindCookieServlet</display-name>
+    <servlet-name>FindCookieServlet</servlet-name>
+    <servlet-class>AmbroseRen.web.FindCookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindCookieServlet</servlet-name>
+    <url-pattern>/FindCookie</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>Find_AddCookieServet</display-name>
+    <servlet-name>Find_AddCookieServet</servlet-name>
+    <servlet-class>AmbroseRen.web.Find_AddCookieServet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Find_AddCookieServet</servlet-name>
+    <url-pattern>/Find_AddCookie</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>Test</display-name>
+    <servlet-name>Test</servlet-name>
+    <servlet-class>AmbroseRen.test.Coding</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Test</servlet-name>
+    <url-pattern>/Coding</url-pattern>
+  </servlet-mapping>	
+	
+	<!-- 发送数据 -->
+	<servlet>
+		<servlet-name>sendData</servlet-name>
+		<servlet-class>AmbroseRen.web.sendData</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sendData</servlet-name>
+		<url-pattern>/sendData</url-pattern>
+	</servlet-mapping>	
+	
+	<!-- 监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+    <listener>
+  		<listener-class>AmbroseRen.web.CountListener</listener-class>
+  	</listener>	    
+	 <context-param>
+	     <param-name>contextConfigLocation</param-name>
+	     <param-value>classpath*:applicationContext.xml</param-value>
+	     <!-- <param-value>classpath*:**/applicationContext-*.xml</param-value> -->
+	     <!-- <param-value>/WEB-INF/classes/log4j2.xml</param-value> -->
+	     <!-- <param-value>classpath:log4j2.xml</param-value> -->
+	 </context-param>
+	 
+	  <servlet>
+	    <description></description>
+	    <display-name>CountListener</display-name>
+	    <servlet-name>CountListener</servlet-name>
+	    <servlet-class>AmbroseRen.web.CountListener</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+	    <servlet-name>CountListener</servlet-name>
+	    <url-pattern>/CountListener</url-pattern>
+	  </servlet-mapping>
+	  
+	  <servlet>
+	    <description></description>
+	    <display-name>A</display-name>
+	    <servlet-name>A</servlet-name>
+	    <servlet-class>AmbroseRen.web.A</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+	    <servlet-name>A</servlet-name>
+	    <url-pattern>/a</url-pattern>
+	  </servlet-mapping>
+	  
+	  <servlet>
+	    <description></description>
+	    <display-name>B</display-name>
+	    <servlet-name>B</servlet-name>
+	    <servlet-class>AmbroseRen.web.B</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+	    <servlet-name>B</servlet-name>
+	    <url-pattern>/b</url-pattern>
+	  </servlet-mapping>	 	
+	 
+	 <!-- 配置过滤器 -->
+	  <filter>
+	  	<filter-name>commentFilter</filter-name>
+	  	<filter-class>AmbroseRen.web.filterMethod</filter-class>
+	  	<init-param>
+	  		<param-name>illegal</param-name>
+	  		<param-value>猫</param-value>
+	  	</init-param>
+	  	<init-param>
+	  		<param-name>size</param-name>
+	  		<param-value>10</param-value>
+	  	</init-param>
+	  </filter>
+	  <filter-mapping>
+	  	<filter-name>commentFilter</filter-name>
+	  	<url-pattern>/comment</url-pattern>
+	  </filter-mapping>
+	
+	  <servlet>
+	    <description></description>
+	    <display-name>commentFilter</display-name>
+	    <servlet-name>commentFilter</servlet-name>
+	    <servlet-class>AmbroseRen.web.commentFilter</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+	    <servlet-name>commentFilter</servlet-name>
+	    <url-pattern>/comment</url-pattern>
+	  </servlet-mapping>	 
+	
+    <!-- Servlet自动扫描读取xml -->
+	<servlet>
+		<servlet-name>DispatcherServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-*.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DispatcherServlet</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 自定义拦截器 -->
+	<servlet>
+		<servlet-name>ActionServlet</servlet-name>
+		<servlet-class>AmbroseRen.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-mvc.xml</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ActionServlet</servlet-name>
+		<url-pattern>*.d</url-pattern>
+	</servlet-mapping>
+	
+  	<servlet>
+		<servlet-name>ActionServlet1</servlet-name>
+		<servlet-class>AmbroseRen.ActionServlet1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ActionServlet1</servlet-name>
+		<url-pattern>*.dd</url-pattern>
+	</servlet-mapping>		
+	
+    <!-- 配置Spring提供的字符编码过滤器 -->
+    <filter>
+        <filter-name>SpringCharacterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>SpringCharacterEncodingFilter</filter-name>
+        <url-pattern>*.do</url-pattern>
+    </filter-mapping>
+	
+	<!-- shiro引用 -->
+<!-- 	<filter>
+	    <filter-name>DelegatingFilterProxy</filter-name>
+	    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	    初始化参数
+	    <init-param>
+	        <param-name>targetBeanName</param-name>
+	        <param-value>shiroFilter</param-value>
+	    </init-param>
+	 </filter>
+	 <filter-mapping>
+	     <filter-name>DelegatingFilterProxy</filter-name>
+	     <url-pattern>/*</url-pattern>
+	 </filter-mapping> -->
+	 
+	 <!--  -->
+
+
+</web-app>

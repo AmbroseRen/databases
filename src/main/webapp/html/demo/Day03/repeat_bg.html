@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>background</title>
+	<style type="text/css">
+		body{
+			background-image:url(../images/Chrysanthemum.jpg);	
+			background-repeat:repeat-y;
+			background-position:center;
+		}
+		/* 简化设置背景图：
+			background：颜色、图片、平铺、位置； */
+		div{
+			width:1024px;
+			height:768px;
+			border:5px solid blue;
+			margin:10px auto;
+		}
+		.remove{
+			background:url(../images/f3.jpg) no-repeat center;
+		}
+		.modify{
+			background:url(../images/modify.png) no-repeat center;
+		}
+		/*3.固定背景图*/
+		.remove{
+			background-attachment:fixed;
+		}
+	</style>
+</head>
+<body>
+	<div class="remove"></div>
+	<div class="remove"></div>
+	<div class="remove"></div>
+	<div class="remove"></div>
+	<div class="remove"></div>
+	<div class="remove"></div>
+	<div class="remove"></div>
+	<div class="remove"></div>
+	<div class="remove"></div>
+	<div class="remove"></div>
+	<div class="remove"></div>
+	<div class="remove"></div>
+	<div class="modify"></div>
+</body>
+</html>

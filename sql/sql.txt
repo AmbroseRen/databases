@@ -1,0 +1,16 @@
+select * from "AmbroseRen" t order by t.userid asc
+CREATE SEQUENCE seq_AmbroseRen
+
+select t.username,t.cpwd from "AmbroseRen" t
+where t.userid='4'
+
+update "AmbroseRen" set username='赵6'
+where username like '_%六%'
+
+insert into "AmbroseRen"(userid,username,cpwd,realname,
+       email,mark,usertype,usertypename,
+       lxr,phone,address) 
+values(seq_AmbroseRen.NEXTVAL,'张三8','111','张三',
+       '1056008502@qq.com','备注',2,'开发者',
+       '','110','天津南开');
+delete "AmbroseRen" where userid='3'

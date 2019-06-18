@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<interface>
+	<globalInfo>
+		<version>v5.0</version>
+		<!-- 发 票 数 据 提 交  DZFP_FP_SUBMIT -->
+		<!-- 用户注册  DZFP_USER_REGISTER -->
+		<interfaceCode>DZFP_FP_SUBMIT</interfaceCode>
+		<token>TJDCPT</token>
+		 <requestTime>20181031115009</requestTime>
+	</globalInfo>
+	<Data>
+		<content>
+			<REQUEST_FPKJXX>
+				<FPKJXX_FPTXX>
+					<!-- 开票方识别号 -->
+					<NSRSBH>91120000103069334G</NSRSBH>
+					<!-- 分机号 -->
+					<FJH>001002</FJH>
+					<!-- 开票方名称 -->
+					<NSRMC>天津自来水集团有限公司</NSRMC>
+					<!-- 销货方地址 -->
+					<XHF_DZ>华苑产业区华天道8号海泰信息广场D座10层</XHF_DZ>
+					<!-- 销货方电话 -->
+					<XHF_DH>022-95113</XHF_DH>
+					<!-- 销货方银行账号 -->
+					<XHF_YHZH>12001645900052512941</XHF_YHZH>
+					<!-- 购货方名称 -->
+					<GHFMC>王记公胜水甫</GHFMC>
+					<!-- 购货方识别号 -->
+					<GHF_NSRSBH>12313112111111111111</GHF_NSRSBH>
+					<!-- 购货方地址 -->
+					<GHF_DZ>营口道122号</GHF_DZ>
+					<!-- 购货方电话 -->
+					<GHF_GDDH>18330471457</GHF_GDDH>
+					<!-- 购货方银行账户 -->
+					<GHF_YHZH>421123199309097657</GHF_YHZH>
+					<!-- 开票员 -->
+					<KPY>自来水</KPY>
+					<!-- 收款员 -->
+					<SKY>Boss</SKY>
+					<!-- 复核人 -->
+					<FHR>Boss</FHR>
+					<!-- 开票类型：1 正票、2 红票 -->
+					<KPLX>1</KPLX>
+					<!-- 原发票代码：KPLX 为红票时候都是必录 -->
+					<YFP_DM>012001700111</YFP_DM>
+					<!-- 原发票号码：KPLX 为红票时候都是必录 -->
+					<YFP_HM>85017666</YFP_HM>
+					<!-- 价税合计金额 -->
+					<KPHJJE>94.72</KPHJJE>
+					<!-- 合计不含税金额 -->
+					<HJBHSJE>94.72</HJBHSJE>
+					<!-- 合计税额 -->
+					<HJSE>0</HJSE>
+					<!-- 备注 -->
+					<BZ>100000020,100000020;</BZ>
+					<!-- 币种 -->
+					<BB>￥</BB>
+					<!-- 外币金额 -->
+					<WB>0</WB>
+					<!-- 发票种类（只开具电子发票-“51”），默认：“51”-电子发票 -->
+					<FPZL>51</FPZL>
+					<!-- 开票日期 -->
+					<KPRQ>2018-10-31 16:12:28</KPRQ>
+					<!-- 发票代码 -->
+					<FP_DM>012001700111</FP_DM>
+					<!-- 发票号码 -->
+					<FP_HM>85017666</FP_HM>
+					<!-- 发票密文 -->
+					<FPMW>7/59/527*2+997084+>/17124</FPMW>
+					<!-- 校验码 -->
+					<JYM>49752 19126 28051 43025</JYM>
+					<!-- 二维码 -->
+					<EWM>20170517103931-070411000669-0</EWM>
+					<!-- 机器码 -->
+					<JQBH>661619973461</JQBH>
+					<!-- PDF流 -->
+					<PDF>070411000339</PDF>				
+				</FPKJXX_FPTXX>
+				
+				<FPKJXX_XMXXS>
+					<FPKJXX_XMXX>
+						<!-- 项目名称 -->
+						<XMMC>billcab</XMMC>
+						<!-- 项目单位 -->
+						<XMDW>天津自来水集团有限公司</XMDW>
+						<!-- 规格型号 -->
+						<GGXH>1.0</GGXH>
+						<!-- 项目数量 -->
+						<XMSL>2</XMSL>
+						<!-- 含税标志：0 表示都不含税，只支持 0 -->
+						<HSBZ>0</HSBZ>
+						<!-- 项目单价 ：小数点后 8 位-->
+						<XMDJ>2.56</XMDJ>
+						<!-- 发票行性质：0正常行、1折扣行、2被折扣行 -->
+						<FPHXZ>0</FPHXZ>
+						<!-- 商品编码 --> 
+						<SPBM>001001001</SPBM>
+						<!-- 商品编码简称 -->
+						<SPBMJC>001</SPBMJC>
+						<!-- 优惠政策标识 ：0：不使用，1：使用-->
+						<YHZCBS>0</YHZCBS>
+						<!-- 零税率标识 ：空：非零税率，1：免税，2：不征税，3普通零税率-->
+						<LSLBS>2</LSLBS> 
+						<!-- 增值税特殊管理：优惠政策标识为1时，必填 -->
+						<ZZSTSGL>0</ZZSTSGL>
+						<!-- 项目金额 -->
+						<XMJE>1000</XMJE>
+						<!-- 税率 -->
+						<SL>0%</SL>
+						<!-- 税额 -->
+						<SE>0</SE>
+					</FPKJXX_XMXX>
+				</FPKJXX_XMXXS>
+				
+			</REQUEST_FPKJXX>
+		</content>
+	</Data>
+</interface>

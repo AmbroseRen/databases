@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>模拟操作</title>
+<script src="../../js/JQuery/jquery-1.11.1.js"></script>
+<style>
+	#gg{
+		height:500px;
+		background-color:red;
+	}
+	#gg>input{
+		float:right;
+		border:1px solid blue;
+	}
+</style>
+<script>
+	$(function(){
+		//给x绑定单击事件
+		$("#gg>input").click(function(){
+			$("#gg").slideUp(500);
+		});
+		setTimeout(function(){
+			//对按钮x模拟单击事件，即让电脑自动点击x按钮
+			$("#gg>input").trigger("click");
+		},3000);
+	});
+</script>
+</head>
+<body>
+	<div id="gg">
+		<input type="button" value="x"/>
+	</div>
+</body>
+</html>

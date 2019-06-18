@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>事件绑定</title>
+<script src="../../js/JQuery/jquery-1.11.1.js"></script>
+<script>
+	$(function(){
+		$(":button:first").click(function(e){
+			console.log(1);
+			console.log(e);
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="bind" />
+</body>
+</html>

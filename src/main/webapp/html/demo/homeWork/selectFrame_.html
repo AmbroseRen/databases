@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>拉选框</title>
+<script>
+	var cities;//
+	window.onload = function(){
+		cities =[
+			["石家庄","保定","廊坊"],
+			["济南","青岛","烟台"],
+			["南京","无锡","苏州"],
+			
+		];
+	}
+	function chg(){
+		var province =document.getElementById("province");
+		var index =province.value;
+		console.log(index);
+		var pcities =cities[index];
+		console.log(pcities);
+		
+		var city =document.getElementById("city");
+		city.innerHTML = "<option>请选择</option>";
+		if(pcities){		
+			for(var i=0;i<pcities.length;i++){
+				//创建并遍历option(city)节点
+				//节点需要引用
+				var opt =document.createElement("option");
+				//取到每一个元素
+				opt.innerHTML =pcities[i];
+				//将其追加到city之下
+				city.appendChild(opt);
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<form action="">
+		省：
+		<select id="province" onchange="chg()">
+			<option value="-1" selected>请选择</option>
+			<option value="0">河北省</option>
+			<option value="1">山东省</option>
+			<option value="2">江苏省</option>
+			<option value="3">四</option>
+		</select>
+		市：
+		<select id="city">
+			<option>请选择</option>
+		</select>
+		<p>
+			<input type="button" value="提交" onclick="chg()"/>
+		</p>
+	</form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>读写节点</title>
+<script>
+	//onload是页面加载事件，由浏览器加载完时自动触发
+	window.onload =function(){
+		//1.读取节点的名称和类型
+		var p1 =document.getElementById("p1");
+		console.log(p1.nodeName);
+		console.log(p1.nodeType);
+		console.log(p1.innerHTML);
+		console.log(p1.innerText);
+		p1.innerHTML = "1.1.DOM操作可以<u>读写</u>节点";
+		var p2 = document.getElementById("p2");
+		console.log(p2.innerText);
+		p2.innerText = "2.DOM操作可以<u>查询</u>节点";
+		//3.读取节点的值：表单控件中的数据（label除外）
+		var press = document.getElementById("press");
+		console.log(press.value);
+		press.value = "BBB";
+		//4.读取节点属性
+		var i1 = document.getElementById("i1");
+		console.log(i1.getAttribute("src"));
+		//读取节点属性
+		i1.setAttribute("src", "../images/02.jpg");
+		i1.removeAttribute("src");
+		//调用属性名
+		//id,style,className
+		var exit =document.getElementById("exit");
+		console.log(exit.style);
+		exit.style.color = "blue";
+	} 
+</script>
+</head>
+<body>
+	<p id="p1">1.DOM操作可以<b>读写</b>节点</p>
+	<p id="p2">2.DMK操作可以<b>查询</b>节点</p>
+	<p id="p3">3.DOM操作可以<b>增删</b>节点</p>
+	<input type="button" value="AAA" id="press"/>
+	<p>
+		<img src="../images/01.jpg" id="i1"/>
+	</p>
+	<p href="#" style="color:red;" id="exit">退出</p>
+</body>
+</html>

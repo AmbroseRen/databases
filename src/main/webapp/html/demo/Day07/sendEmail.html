@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>发送邮件</title>
+	<style>
+		p{
+			border:1px solid red;
+			width:200px;
+			height:30px;
+			line-height:30px;
+			text-align:center;
+		}
+	</style>
+	<script>
+		var id;
+		function send(){
+			if(id){
+				return;
+			}
+			var p  =document.getElementById("msg");
+			p.innerHTML ="正在发送...";//编辑<p>内文本内容
+			id =setTimeout(function(){
+				p.innerHTML = "已发送!";
+				id =null;//自动停止时清空id
+			}, 2000);
+		}
+		function repeal(){
+			if(id){//限制启动时停止			
+			var p =document.getElementById("msg");
+			p.innerHTML = "已撤销";
+			clearTimeout(id);
+			id =null;
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="发送" onclick="send();"/>
+	<input type="button" value="撤销" onclick="repeal();"/>
+	<p id="msg"></p>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>内置对象</title>
+	<script >
+		//2.Number
+		var n = 3.1415927;
+		console.log(n.toFixed(3));
+		//JS中的数组都是Object数组object
+		//3.Array:1)如何创建数组--已知要存的数据/不知要存的数据；
+		var d1 =["zhangsan",25,false];
+		console.log(d1[0]);
+		var d2 =new Array();
+		d2.push("lisi");
+		d2.push(28);
+		d2.push(true);
+		console.log(d2[0]);
+		//无论用哪种方式，创建出来的数组本质都一样。
+		//2）数组倒转
+		var arr = [5,12,8,1,6,4,22];
+		arr.reverse();
+		console.log(arr);
+		//3)数组排序
+		arr.sort();
+		console.log(arr);
+//		隐式转换
+		arr.sort(function(a,b){
+			return a-b;//自定义方法
+		});
+		console.log(arr);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

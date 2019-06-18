@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ActiveXObject</title>
+<script type="text/javascript" src="../../js/plugins/ajax.js"></script>
+<script type="text/javascript">
+	function getXhr(){
+		var xhr =null;
+		if(window.XMLHttpRequest){
+			xhr = new XMLHttpRequest();			
+		}else{
+			xhr = new ActiveXObject('MicroSoft.XmlHttp');
+		}
+		return xhr;
+	}
+	
+	function getCity(v1){
+		//alert(v1);
+		console.log($('s1').value);
+		var xhr =getXhr();
+		
+		xhr.open('get','getCity.d?name='+$('s1').value,true);
+		xhr.onreadystatechange =function(){
+			if(xhr.readyState==4 && status ==200){
+				var txt =responseText;
+				var strs =txt.split(';');
+				$('s2').innerHTML ='';
+				for(var i=0;i<strs.length;i++){
+					var st =strs[i].split(',');
+					var op =new Option(st[0],st[1]);
+					$('s2').innerHTML = op;
+				}
+			}
+		};
+		xhr.send(null);
+	}
+	
+</script>
+</head>
+<body style="font-size:30px;" onchange="getCity(this.value);">
+	<select id="s1" style="width:150px;">
+		<option value="bj">北京</option>
+		<option value="sh">上海</option>
+		<option value="gz">广州</option>
+	</select>
+	<select id="s2" style="width:150px;">
+		<option>北1</option>
+		<option>北2</option>
+		<option>北3</option>
+	</select>
+	<a href="javascript:alert(getXhr())">Click</a>
+</body>
+</html>

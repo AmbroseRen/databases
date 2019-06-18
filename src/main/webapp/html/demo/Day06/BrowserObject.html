@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>浏览器对象</title>
+	<script>
+		//调用window对象的属性或方法，可以省略"window."
+		//弹出框：
+		function f1(){
+			alert("你好！");
+		}
+		function f2(){
+			var b =confirm("你吃了吗？");	
+				console.log(b);
+		}
+		function f3(){
+			var v =prompt("你吃了啥？");
+			console.log(v);
+		}
+		function f4(){
+			//定时器一秒循环调用函数
+			//该方法返回定时器的id，此方法用于停止定时器
+			var n = 5000;
+			var id = window.setInterval(function(){
+				console.log(n--);
+				if(n<0){
+					clearInterval(id);
+					console.log("BOOM");
+				}
+			},10);
+			//启动定时器相当于启动了支线程，
+			//而当前方法f4相当于主线程，2个线程是并发执行，不互相等待。
+			//因此，f4方法在启动了定时器后，立刻执行输出BOOM的代码，
+			//而定时器却是在1000毫秒后才执行第一次。
+			//console.log("BOOM");
+		}
+		//一次性定时器
+		var id ;
+		function f5(){
+			//启动定时器，让其在xx后调用该函数，运行完后会自动停止。
+			setTimeout(function(){
+				console.log("到点啦...");
+			},3000);
+		}
+		function f6(){
+			clearTimeout(id);
+		}
+	</script>
+</head>
+<body>
+	<p>
+		<input type="button" value="按钮1" onclick="f1();"/>
+		<input type="button" value="按钮2" onclick="f2();"/>
+		<input type="button" value="按钮3" onclick="f3();"/>
+	</p>
+	<p>
+		<input type="button" value="倒计时" onclick="f4();"/>
+		<input type="button" value="提醒" onclick="f5();"/>
+		<input type="button" value="取消" onclick="f6();"/>
+	</p>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>动画</title>
+<script src="../../js/JQuery/jquery-1.11.1.js"></script>
+<style>
+	#d1{
+		width:200px;
+		height:200px;
+		background-color:red;
+/* 		//自定义动画基于定位（相对/绝对/固定） */
+		position:relative;
+	}
+	#d2{
+		width:200px;
+		height:400px;
+		background-color:purple;
+		position:fixed;
+		top:100px;
+		right:-150px;
+	}
+</style>
+<script>
+	function f1(){		
+		$("#d1").show(3000);		
+	}
+	function f2(){
+		//参数2是一个函数，JQuery会在动画完成后自动调用它，
+		//象这样需要传递给方法并且由方法自动调用的函数，称为回调函数。
+		$("#d1").hide(3000,function(){
+			console.log("OVER");
+		});
+		//动画实现原理：通过定时器不断修改元素的样式（大小、透明度）。
+		//当前方法f2（）相当于主线程，调用了hide（），
+		//相当于启动了定时器，即启动了支线程。主线程和支线程并发执行。
+		//所以主线程立刻输出了“完成”，而支线程动画在3秒后才执行完
+		console.log("完成");
+	}
+	function f3(){
+		$("#d1").slideDown(3000);
+	}
+	function f4(){
+		$("#d1").slideUp(3000);
+	}
+	function f5(){
+		$("#d1").fadeIn(3000);
+	}
+	function f6(){
+		$("#d1").fadeOut(10);
+	}
+	$(function(){
+		//给d1绑定悬停事件
+		$("#d1").hover(
+			function(){
+				$(this).animate({"left":"80px"},500);
+			},
+			function(){
+				$(this).animate({"left":"0px"},500);
+			}
+		);
+		//给d2绑定悬停事件
+		$("#d2").hover(
+			function(){
+				$(this).animate({"right":0},500);
+			},
+			function(){
+				$(this).animate({"right":"-150px"},500);
+			}
+		);
+	});
+</script>
+</head>
+<body>
+	<p>
+		<input type="button" value="show" onclick="f1();"/>
+		<input type="button" value="hide" onclick="f2();"/>
+		<input type="button" value="slideDown" onclick="f3();"/>
+		<input type="button" value="slideUp" onclick="f4();"/>
+		<input type="button" value="fadeIn" onclick="f5();"/>
+		<input type="button" value="fadeOut" onclick="f6();"/>
+	</p>
+	<div id="d1">d1文本</div>
+	<div id="d2"></div>
+</body>
+</html>

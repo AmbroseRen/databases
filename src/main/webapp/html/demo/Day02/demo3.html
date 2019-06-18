@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS规则特性</title>
+	<style type="text/css">
+		/*1.继承性：子元素可以继承父元素的样式（字体、颜色）。*/
+		body{
+			font-family:"微软雅黑","文泉驿正黑","黑体";
+		}
+		/*2.层叠性：给一个元素增加不同的声明，效果会叠加。*/
+		h1{
+			color:red;
+			font-size:50px;
+		}
+		/*3.优先级：给一个元素增加相同的声明，效果以后者为准，也叫就近原则（哪个样式近就哪个生效）。*/
+		h2{
+			color:gray;
+		}
+		h2{
+			color:purple;
+		}
+	</style>
+</head>
+<body>
+	<h1>曾经沧海难为水</h1>
+	<h2>除却巫山不是云</h2>
+</body>
+</html>

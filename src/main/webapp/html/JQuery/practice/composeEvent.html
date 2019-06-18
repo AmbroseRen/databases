@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>合成事件</title>
+<script src="../../../js/JQuery/jquery-1.11.1.js"></script>
+<style>
+	.big{
+		width:300px;
+		height:300px;
+	}
+</style>
+<script>
+	$(function(){
+		$("img").hover(
+			function(){
+				$(this).addClass("big");
+			},
+			function(){
+				$(this).removeClass("big");
+			}
+		);
+		console.log(1);
+		setInterval(function(){
+			$("img").toggle();
+		},500);
+// 		setInterval(function(){
+// 			//toggle()开关切换隐藏图片
+// 			$("img").toggle();
+// 		},500);
+	});
+</script>
+</head>
+<body>
+	<p>
+		<img src="../images/01.jpg"/>
+		<img src="../images/02.jpg"/>
+		<img src="../images/03.jpg"/>
+	</p>
+</body>
+</html>

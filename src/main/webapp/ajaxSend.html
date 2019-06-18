@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>send</title>
+<script type="text/javascript" src =js/plugins/ajax.js></script>
+<script type="text/javascript" src="js/JQuery/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		setInterval(send,3000);
+	});
+	
+	function send2(){
+		$('#msg').load('getSend.d');
+	}
+	function send(){
+		var xhr =getXhr();
+		xhr.open('get','getSend.d',true);
+		xhr.onreadystatechange =function(){
+			if(xhr.readyState == 4 && xhr.status==200){		
+				var  txt =xhr.responseText;
+				$('msg').innerHTML =txt;
+			}
+		}
+		xhr.send(null); 
+		$('#msg').empty();
+		$.ajax({
+			"url":"getSend.d",
+			"type":"get",
+			"dataType":"json",
+			"success":function(data){
+				$('#msg').append(data);
+			}
+		});
+	}
+</script>
+</head>
+<body style="font-size:30px;">
+	<form action="">
+		<fieldset>
+			<legend>生成随机数</legend>
+			<a href="javascript:send()">点此显示随机整数</a>
+			<span id="msg" style="color:red;"></span>
+		</fieldset>
+	</form>
+</body>
+</html>

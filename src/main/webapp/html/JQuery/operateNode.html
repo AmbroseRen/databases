@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>读写节点</title>
+<script src="../../js/JQuery/jquery-1.11.1.js"></script>
+<script>
+	$(function(){
+		//html() == innerHTML
+		console.log($("p:eq(0)").html());
+		$("p:eq(0)").html("JQuery支持<u>读写</u>节点");
+		//text() == innertext
+		console.log($("p:eq(1)").text());
+		$("p:eq(0)").text("JQuery支持<u>增删</u>节点");
+		//val() ==value
+		console.log($(":text:first").val());
+		$(":text:first").val("How are you?");
+		//attr() ==getAttribute(),setAttribute()
+		console.log($("img:first").attr("src"));
+		$("img:first").attr("src","../images/03.jpg");
+	});
+</script>
+</head>
+<body>
+	<div>
+		<p>JQuery支持<b>读写</b>节点</p>
+		<p>JQuery支持<b>增删</b>节点</p>
+		<p>
+			<input type="text" value="Hello" disabled/>
+		</p>
+		<img src="../images/01.jpg">
+	</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq+—-H</title>
+<script src="../../../js/JQuery/jquery-1.11.1.js"></script>
+<script>
+	var size;
+	function crease(){
+		 size =$("p").css("font-size");
+		size = size.replace("px","");
+		$("p").css("font-size",++size+"px");
+	}
+	function decrease(){
+		//var size =$("p").css("font-size");
+		//size =size.replace("px","");
+		$("p").css("font-size",--size+"px");
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="+" onclick="crease()"/>
+	<input type="button" value="-" onclick="decrease()"/>
+	<p>一剪寒梅傲立雪中，</p>
+	<p>只为伊人绽放</p>
+</body>
+</html>

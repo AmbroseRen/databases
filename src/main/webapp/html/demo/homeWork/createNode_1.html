@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>节点操作</title>
+<script>
+	function f1(){
+		//定位父节点
+		var ul =document.getElementById("city");
+		//创建子节点，并添加元素
+		var li =document.createElement("li");
+		li.innerHTML ="子元素...";
+		ul.appendChild(li);
+	}
+	function f2(){
+		var ul =document.getElementById("city");//父节点
+		var gz =document.getElementById("gz");//子节点
+		//创建子节点并插入
+		var insert =document.createElement("sun");
+		insert.innerHTML ="插入的新节点";
+		ul.insertBefore(insert, gz);
+		
+	}
+	function f3(){
+		var ul =document.getElementById("city");
+		var gz = document.getElementById("gz");
+		ul.removeChild(gz);
+	}
+</script>
+</head>
+<body>
+	<ul id="city">
+		<li >北京</li>
+		<li>上海</li>
+		<li id="gz">广州</li>
+		<li>深圳</li>
+		<li>湖北</li>
+	</ul>
+	<p>
+		性别：
+		<input type="radio" name="sex"/>男
+		<input type="radio" name="sex"/>女
+	</p>
+	<p>
+		<input type="button" value="追加" onclick="f1();"/>
+		<input type="button" value="插入" onclick="f2()"/>
+		<input type="button" value="删除" onclick="f3()"/>
+	</p>
+</body>
+</html>

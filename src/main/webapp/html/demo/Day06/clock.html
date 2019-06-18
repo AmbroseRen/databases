@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>clock...</title>
+	<script>
+		var id;
+		function start(){
+		if(id){//若id非空，则不必再启动
+			return;
+		}
+			//id =setInterval(callback, delay)
+			id =setInterval(function(){
+				var date =new Date();
+				var t =date.toLocaleTimeString();
+				var p =document.getElementById("clock");
+				p.innerHTML = t;//输出
+			},1000);
+		}
+		function stop(){
+			clearInterval(id);
+			id= null;
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="开始" onclick="start()"/>
+	<input type="button" value="结束" onclick="stop()"/>
+	<p id="clock"></p>
+</body>
+</html>
