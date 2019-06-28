@@ -351,6 +351,34 @@ public class Tools {
 	}
 	
     /**
+     *
+     * @param a
+     *            被匹配的长字符串
+     * @param b
+     *            匹配的短字符串
+     * @return 匹配次数
+     */
+    public int hit(String a, String b) {
+        if (a.length() < b.length()) {
+            return 0;
+        }
+        char[] a_t = a.toCharArray();
+        int count = 0;
+ 
+        for (int i = 0; i < a.length() - b.length(); i++) {
+            StringBuffer buffer = new StringBuffer();
+            for (int j = 0; j < b.length(); j++) {
+                buffer.append(a_t[i + j]);
+            }
+            if(buffer.toString().equals(b)){
+                count ++;
+            }
+        }
+ 
+        return count;
+    }
+	
+    /**
      * 使用取值实例：
       String[] ArrayID = { "name", "value", "css" };
       String[] arr0 =ArrayAdd(ArrayID, "name1", "value1", "css1");
